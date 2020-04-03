@@ -40,9 +40,9 @@ func main() {
 		Name: "Tiniyo Inc.",
 		Logo: &logoBytes,
 		Address: &generator.Address{
-			Address:    "Founders Cube",
-			Address2:   "Mahadevpura",
-			PostalCode: "560048",
+			Address:    "TestCube Inc",
+			Address2:   "UBCITY",
+			PostalCode: "560001",
 			City:       "Bangalore",
 			Country:    "India",
 		},
@@ -51,9 +51,9 @@ func main() {
 	doc.SetCustomer(&generator.Contact{
 		Name: "CricHeroes Pvt. Ltd",
 		Address: &generator.Address{
-			Address:    "Digicorp House, Ambawadi",
-			PostalCode: "380015",
-			City:       "Ahmedabad",
+			Address:    "CustomTech Solutions Inc.",
+			PostalCode: "300005",
+			City:       "Mumbai",
 			Country:    "India",
 		},
 	})
@@ -61,7 +61,7 @@ func main() {
 	doc.AppendItem(&generator.Item{
 		Name:     "[IND] Delivered SMS",
 		UnitCost: "0.11",
-		Quantity: "135000",
+		Quantity: "1300",
 		Tax: &generator.Tax{
 			Percent: "18",
 		},
@@ -70,7 +70,7 @@ func main() {
 	doc.AppendItem(&generator.Item{
 		Name:     "[IND] Sent SMS",
 		UnitCost: "0.11",
-		Quantity: "55000",
+		Quantity: "100",
 		Tax: &generator.Tax{
 			Percent: "18",
 		},
@@ -79,7 +79,7 @@ func main() {
 	doc.AppendItem(&generator.Item{
 		Name:     "[IND] Failed SMS",
 		UnitCost: "0.00",
-		Quantity: "5000",
+		Quantity: "30",
 		Tax: &generator.Tax{
 			Percent: "18",
 		},
