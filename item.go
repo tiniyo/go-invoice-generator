@@ -52,17 +52,6 @@ func (i *Item) appendColTo(options *Options, pdf *gofpdf.Fpdf) {
 	pdf.SetX(155)
 	pdf.CellFormat(20, 6, taxString, "0", 0, "", false, 0, "")
 
-	discountType, discountAmount := i.Discount.getDiscount()
-	var discountString string
-	if discountType == "percent" {
-		discountString = fmt.Sprintf("%s %s", discountAmount, encodeString("%"))
-	} else {
-		discountString = fmt.Sprintf("%s %s", discountAmount, encodeString("€"))
-	}
-
-	pdf.SetX(155)
-	pdf.CellFormat(20, 6, discountString, "0", 0, "", false, 0, "")
-
 	// TOTAL TTC
 	pdf.SetX(175)
 	pdf.CellFormat(25, 6, ac.FormatMoneyDecimal(i.totalTTC()), "0", 0, "", false, 0, "")

@@ -99,6 +99,8 @@ func (d *Document) Build() (*gofpdf.Fpdf, error) {
 	// Append payment term
 	d.appendPaymentTerm(pdf)
 
+	d.appendBank(pdf)
+
 	// Append js to autoprint if AutoPrint == true
 	if d.Options.AutoPrint {
 		pdf.SetJavascript("print(true);")
