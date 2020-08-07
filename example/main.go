@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 
-	generator "github.com/angelodlfrtr/go-invoice-generator"
+	generator "github.com/tiniyo/go-invoice-generator"
 )
 
 /* country specific sms and cost */

@@ -25,6 +25,7 @@ type Document struct {
 	Date         string
 	ValidityDate string
 	PaymentTerm  string
+	Bank         *Bank
 }
 
 func (d *Document) Build() (*gofpdf.Fpdf, error) {
@@ -104,6 +105,11 @@ func (d *Document) Build() (*gofpdf.Fpdf, error) {
 	}
 
 	return pdf, nil
+}
+
+func (d *Document) SetBank(b *Bank) *Document {
+	d.Bank = b
+	return d
 }
 
 func (d *Document) SetType(docType string) *Document {
@@ -378,4 +384,8 @@ func (d *Document) appendPaymentTerm(pdf *gofpdf.Fpdf) {
 		pdf.SetFont("Helvetica", "B", 10)
 		pdf.CellFormat(80, 4, paymentTermString, "0", 0, "R", false, 0, "")
 	}
+}
+
+func (d *Document) appendBank(pdf *gofpdf.Fpdf) {
+	d.Bank.appendBankTODoc(120, pdf.GetY()+15, true, pdf)
 }
